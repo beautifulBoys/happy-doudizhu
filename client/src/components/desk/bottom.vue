@@ -2,7 +2,7 @@
   <div class="bottom">
     <div class="left">
       <div class="bea"></div>
-      <div class="text">{{info.mine.user.money}}</div>
+      <!-- <div class="text">{{info.mine.user.money}}</div>
       <div class="add">
         <div class="box">+</div>
       </div>
@@ -12,7 +12,7 @@
       <div class="icon">
         <div class="box">倍</div>
       </div>
-      <div class="text">{{info.mine.desk.times}}</div>
+      <div class="text">{{info.mine.desk.times}}</div> -->
     </div>
   </div>
 </template>

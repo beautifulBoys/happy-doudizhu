@@ -2,7 +2,7 @@
   <div class="desk">
     <div class="body">
       <div class="top-box">
-        <div class="top" v-show="start">
+        <div class="top" v-show="deskStatus[0] !== 'start' && deskStatus[0] !== 'search'">
           <desk-first></desk-first>
           <desk-second></desk-second>
         </div>
@@ -21,7 +21,6 @@
   import secondCode from '../components/desk/second.vue';
   import mineCode from '../components/desk/mine.vue';
   import bottomCode from '../components/desk/bottom.vue';
-  import io from '../lib/socket.io.js';
   export default {
     components: {
       'desk-first': firstCode,
@@ -40,10 +39,6 @@
       ...mapGetters([]),
       ...mapMutations([])
     },
-    mounted () {
-      console.log(io);
-      // this.$store.commit('create');
-    },
     methods: {
       sortEvent () {
         this.$store.commit('sort');
@@ -55,7 +50,7 @@
   .desk {
     width: 100%;
     height: 100%;
-    background: #eee url(../images/desk_bg.jpg) no-repeat center center;
+    background: #333; // #eee url(../images/desk_bg.jpg) no-repeat center center
     background-size: 113%;
     display: flex;
     flex-flow: column;

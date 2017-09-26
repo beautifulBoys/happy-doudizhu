@@ -2,11 +2,11 @@
   <div class="mine">
     <div class="left">
       <img src="../../images/dizhu.png"/>
-      <div class="user"><span>{{info.mine.user.name}}</span></div>
+      <div class="user"><span>{{listItem.user.name}}</span></div>
     </div>
 
     <div class="right">
-      <template v-for="item in card">
+      <template v-for="item in listItem.desk.cards">
         <li-card :item="item" :show="true" :canActive="true"></li-card>
       </template>
       <div style="width: 50px"></div>
@@ -14,29 +14,29 @@
 
     <div class="control">
       <div class="control-position">
-        <div class="play-card" v-show="info.mine.desk.chupaiObj.cardShow">
+        <!-- <div class="play-card" v-show="info.mine.desk.chupaiObj.cardShow">
           <template v-for="item in active">
             <li-card :item="item" :show="true" type="small"></li-card>
           </template>
           <div style="width: 30px"></div>
-        </div>
-        <div class="play-tip" v-show="info.mine.desk.chupaiObj.textShow">
+        </div> -->
+        <!-- <div class="play-tip" v-show="info.mine.desk.chupaiObj.textShow">
           <div class="control-text">不出</div>
-        </div>
-        <div class="play-control" v-show="!info.mine.desk.chupaiObj.textShow">
+        </div> -->
+        <div class="play-control">
           <div class="control-box-btn" v-show="deskStatus[0] === 'start'">
             <div class="btn width" @click="startEvent(5)">明牌开始<span class="span"> X5</span></div>
             <div class="btn width blue" @click="startEvent(1)">开始游戏</div>
           </div>
-          <div class="control-box-btn" v-show="deskStatus[0] === 'jiaodizhu' && (info.jiaodizhuIndex === 0 || info.jiaodizhuIndex === 4)">
+          <div class="control-box-btn" v-show="deskStatus[0] === 'jiaodizhu'">
             <div class="btn" @click="bujiaoEvent()">不叫</div>
             <div class="btn" @click="jiaodizhuEvent()">叫地主</div>
-            <!-- <div class="btn" @click="qiangdizhuEvent()">抢地主</div> -->
-            <!-- <li-clock style="margin-top:15px;" :second="timeObj.chupai" v-model="clockStatus" @timeOut="timeOutEvent()"></li-clock> -->
+            <!-- <div class="btn" @click="qiangdizhuEvent()">抢地主</div>
+            <li-clock style="margin-top:15px;" :second="timeObj.chupai" v-model="clockStatus" @timeOut="timeOutEvent()"></li-clock> -->
           </div>
-          <div class="control-box-btn" v-show="deskStatus[0] === 'chupai' && info.mine.desk.chupaiObj.status">
+          <div class="control-box-btn" v-show="deskStatus[0] === 'chupai'">
             <div class="btn"@click="buchuEvent()">不出</div>
-            <div class="btn" @click="tipEvent()">提示</div>
+            <!-- <div class="btn" @click="tipEvent()">提示</div> -->
             <div class="btn" @click="chupaiEvent()">出牌</div>
             <!-- <li-clock style="margin-top:15px;" :second="timeObj.chupai" v-model="clockStatus" @timeOut="timeOutEvent()"></li-clock> -->
           </div>
@@ -61,16 +61,18 @@
         clockStatus: false,
         noPlay: false,
         cardShow: false,
-        controlShow: true
+        controlShow: true,
+        card: []
       };
     },
     computed: {
       ...mapState({
-        card: state => state.desk.info.mine.desk.cards,
-        active: state => state.desk.info.mine.desk.active,
-        deskStatus: state => state.desk.deskStatus,
-        info: state => state.desk.info,
-        timeObj: state => state.desk.timeObj
+        listItem: state => state.desk.info.list[0],
+        // card: state => state.desk.info.mine.desk.cards,
+        // active: state => state.desk.info.mine.desk.active,
+        deskStatus: state => state.desk.deskStatus
+        // info: state => state.desk.info,
+        // timeObj: state => state.desk.timeObj
       }),
       ...mapGetters([])
     },

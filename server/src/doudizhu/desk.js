@@ -5,6 +5,7 @@ var io = require('socket.io')(http);
 var cards = require('./lib/cards.js');
 var robot = require('./lib/robot.js');
 var desk_func = require('./lib/desk_func.js');
+var on_jiaodizhu = require('./on/jiaodizhu.js');
 
 // var Desk = require('./schemas/desk.js'); // 数据库处理
 
@@ -20,39 +21,42 @@ function desk () {
     socket.emit('connectSuccess');
     socket.on('user', function (info) { // 获取到用户信息，洗牌、分牌、发牌
       var newCardArr = cards.distribute();
-      info.mine.desk.deskId = 12;
-      info.mine.desk.role.index = 0; // 叫地主顺序
-      info.mine.desk.role.type = 1; // 角色类型
-      info.mine.desk.role.text = '地主'; // 角色类型解释说明
-      info.mine.desk.cards_fu = newCardArr[info.mine.desk.role.index];
+/*
+    0 : {
+          cardIndex: null, // 发牌的顺序
+          weizhiIndex: 0, // 本机显示位置的顺序
+          role: {
+            index: null, // 叫地主顺序
+            type: null, // 角色类型
+            text: '' // 角色类型解释说明
+          },
+          user: {
+            id: 21,
+            name: '深藏blue',
+            money: 20580
+          },
+          desk: {
+            active: [],
+            cards: [],
+            cards_fu: [],
+            deathList: [],
+            isMingPai: false
+          }
+        }
+*/
+      
+      for (let i = 0, list = info.list; i < list.length; i++) {
+        if (list[i].weizhiIndex === 0) list[i].desk.cards = newCardArr[0];
+        if (list[i].weizhiIndex === 1) list[i].desk.cards = newCardArr[1];
+        if (list[i].weizhiIndex === 2) list[i].desk.cards = newCardArr[2];
+        if (i === 3) list[i].cards = newCardArr[3];
+      }
 
-      info.first.desk.deskId = 12;
-      info.first.desk.role.index = 1; // 叫地主顺序
-      info.first.desk.role.type = 0; // 角色类型
-      info.first.desk.role.text = '农民'; // 角色类型解释说明
-      info.first.desk.cards = newCardArr[info.first.desk.role.index];
-      info.first.user = {
-        id: 22,
-        name: '醉生梦死',
-        money: 20130
-      };
-
-      info.first.desk.deskId = 12;
-      info.first.desk.role.index = 2; // 叫地主顺序
-      info.first.desk.role.type = 0; // 角色类型
-      info.first.desk.role.text = '农民'; // 角色类型解释说明
-      info.second.desk.cards = newCardArr[info.second.desk.role.index];
-      info.second.user = {
-        id: 23,
-        name: '望穿秋水',
-        money: 53330
-      };
-      info.other = newCardArr[3];
       socket.emit('desk-and-cards', info);
     });
     // 叫地主
     socket.on('jiao-di-zhu', function (info) {
-      socket.emit('jiao-di-zhu-success', info); // 向自己推送
+      on_jiaodizhu(socket, info);
     });
     // 出牌
     socket.on('chu-pai', function (info) {

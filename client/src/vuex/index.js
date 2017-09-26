@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
-import desk from './desk';
+import desk from './desk/desk.js';
 
 Vue.use(Vuex);
 

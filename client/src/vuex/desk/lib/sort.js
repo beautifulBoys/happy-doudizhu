@@ -5,10 +5,10 @@ function sort (arr) {
   });
 };
 
-function sortSmall (arr) {
-  return arr.sort((a, b) => {
-    return a.value - b.value;
-  });
-};
+// function sortSmall (arr) {
+//   return arr.sort((a, b) => {
+//     return a.value - b.value;
+//   });
+// };
 
 export default sort;

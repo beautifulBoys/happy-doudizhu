@@ -3,13 +3,13 @@
     <div class="left">
       <img src="../../images/nongmin1.png"/>
       <div class="user">
-        <div class="name">{{info.first.user.name}}</div>
-        <div class="text">{{info.first.user.money}}</div>
+        <div class="name">{{listItem.user.name}}</div>
+        <div class="text">{{listItem.user.money}}</div>
       </div>
     </div>
     <div class="right">
       <div class="mingpai">
-        <template v-for="item in active">
+        <template v-for="item in listItem.desk.active" v-if="listItem.desk.isMingPai">
           <li-card :item="item" :show="true" type="small"></li-card>
         </template>
         <div style="width: 30px"></div>
@@ -17,16 +17,16 @@
       <div class="control-box">
         <div class="size">
           <img src="../../images/card_bg.png"/>
-          <div class="text">17</div>
+          <div class="text">{{cardsCount[1]}}</div>
         </div>
-        <div>
-          <template v-for="item in active">
+        <div class="chupai-box-hook">
+          <template v-for="item in listItem.desk.active">
             <li-card :item="item" :show="true" type="small"></li-card>
           </template>
         </div>
         <div class="control">
           <div class="tip" v-show="tipShow">不出</div>
-          <li-clock :second="countDown" v-model="clockStatus"></li-clock>
+          <!-- <li-clock :second="countDown" v-model="clockStatus"></li-clock> -->
         </div>
       </div>
     </div>
@@ -50,10 +50,9 @@
     },
     computed: {
       ...mapState({
-        active: state => state.desk.info.first.desk.active,
-        info: state => state.desk.info
+        listItem: state => state.desk.info.list[1]
       }),
-      ...mapGetters([]),
+      ...mapGetters(['cardsCount']),
       ...mapMutations([])
     }
   };

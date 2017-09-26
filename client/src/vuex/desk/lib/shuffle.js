@@ -73,5 +73,5 @@ function hunxiao (arr) {
 }
 export default () => {
   // let count = Math.floor(Math.random() * 3 + 2);
-  return hunxiao(cardArr);
+  return hunxiao(arr);
 };
