@@ -1,0 +1,27 @@
+{
+  "name": "server1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "jshint": "^2.9.5",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2",
+    "mongoose": "^4.8.6"
+  }
+}
