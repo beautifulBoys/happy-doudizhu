@@ -1,7 +1,9 @@
 <template>
   <div class="mine">
     <div class="left">
-      <img src="../../images/dizhu.png"/>
+      <img src="../../images/touxiang.png" v-show="listItem.role.type === -1"/>
+      <img src="../../images/dizhu.png" v-show="listItem.role.type === 1"/>
+      <img src="../../images/nongmin1.png" v-show="listItem.role.type === 0"/>
       <div class="user"><span>{{listItem.user.name}}</span></div>
     </div>
 
@@ -34,7 +36,7 @@
             <!-- <div class="btn" @click="qiangdizhuEvent()">抢地主</div>
             <li-clock style="margin-top:15px;" :second="timeObj.chupai" v-model="clockStatus" @timeOut="timeOutEvent()"></li-clock> -->
           </div>
-          <div class="control-box-btn" v-show="deskStatus[0] === 'chupai'">
+          <div class="control-box-btn" v-show="deskStatus[0] === 'chupai' && commonInfo.chupaiIndex === 0">
             <div class="btn"@click="buchuEvent()">不出</div>
             <!-- <div class="btn" @click="tipEvent()">提示</div> -->
             <div class="btn" @click="chupaiEvent()">出牌</div>
@@ -70,7 +72,8 @@
         listItem: state => state.desk.info.list[0],
         // card: state => state.desk.info.mine.desk.cards,
         // active: state => state.desk.info.mine.desk.active,
-        deskStatus: state => state.desk.deskStatus
+        deskStatus: state => state.desk.deskStatus,
+        commonInfo: state => state.desk.info.commonInfo
         // info: state => state.desk.info,
         // timeObj: state => state.desk.timeObj
       }),

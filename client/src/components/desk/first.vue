@@ -1,10 +1,12 @@
 <template>
   <div class="first">
     <div class="left">
-      <img src="../../images/nongmin1.png"/>
+      <img src="../../images/touxiang.png" v-show="listItem.role.type === -1"/>
+      <img src="../../images/dizhu.png" v-show="listItem.role.type === 1"/>
+      <img src="../../images/nongmin1.png" v-show="listItem.role.type === 0"/>
       <div class="user">
-        <div class="name">{{listItem.user.name}}</div>
-        <div class="text">{{listItem.user.money}}</div>
+        <div class="name">{{userName}}</div>
+        <div class="text">{{userMoney}}</div>
       </div>
     </div>
     <div class="right">
@@ -50,10 +52,19 @@
     },
     computed: {
       ...mapState({
-        listItem: state => state.desk.info.list[1]
+        listItem: state => state.desk.info.list[2]
       }),
       ...mapGetters(['cardsCount']),
-      ...mapMutations([])
+      ...mapMutations([]),
+      userName () {
+        let str = '';
+        if (this.listItem.user.name.length > 4) str = this.listItem.user.name.substr(0, 3) + '...';
+        else str = this.listItem.user.name;
+        return str;
+      },
+      userMoney () {
+        return this.listItem.user.money;
+      }
     }
   };
 </script>

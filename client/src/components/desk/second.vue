@@ -12,7 +12,7 @@
           <img src="../../images/card_bg.png"/>
           <div class="text">{{cardsCount[2]}}</div>
         </div>
-        <div>
+        <div class="active-right">
           <template v-for="item in listItem.desk.active">
             <li-card :item="item" :show="true" type="small"></li-card>
           </template>
@@ -24,10 +24,12 @@
       </div>
     </div>
     <div class="right">
-      <img src="../../images/nongmin2.png"/>
+      <img src="../../images/touxiang.png" v-show="listItem.role.type === -1"/>
+      <img src="../../images/dizhu.png" v-show="listItem.role.type === 1"/>
+      <img src="../../images/nongmin2.png" v-show="listItem.role.type === 0"/>
       <div class="user">
-        <div class="name">{{listItem.user.name}}</div>
-        <div class="text">{{listItem.user.money}}</div>
+        <div class="name">{{userName}}</div>
+        <div class="text">{{userMoney}}</div>
       </div>
     </div>
   </div>
@@ -50,10 +52,19 @@
     },
     computed: {
       ...mapState({
-        listItem: state => state.desk.info.list[2]
+        listItem: state => state.desk.info.list[1]
       }),
       ...mapGetters(['cardsCount']),
-      ...mapMutations([])
+      ...mapMutations([]),
+      userName () {
+        let str = '';
+        if (this.listItem.user.name.length > 4) str = this.listItem.user.name.substr(0, 3) + '...';
+        else str = this.listItem.user.name;
+        return str;
+      },
+      userMoney () {
+        return this.listItem.user.money;
+      }
     }
   };
 </script>
@@ -101,6 +112,11 @@
         padding-right: 10px;
         box-sizing: border-box;
         position: relative;
+        .active-right {
+          text-align: right;
+          padding-right: 30px;
+          box-sizing: border-box;
+        }
         .size {
           width: 25px;
           height: 30px;

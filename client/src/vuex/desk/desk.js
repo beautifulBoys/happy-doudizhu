@@ -20,8 +20,9 @@ export default {
         activeCards: [],
         chupaiIndex: 0,
         commonTimes: 15,
-        jiaodizhuInfo: {
-          index: 0
+        jiaodizhuArr: [],
+        diPaiInfo: { // 底牌
+          cards: []
         }
       },
       list: [
@@ -29,8 +30,7 @@ export default {
           cardIndex: 0, // 发牌的顺序 (此值为服务器判断基准，也是全局的唯一区别id )
           weizhiIndex: 0, // 本机显示位置的顺序 (这个值用于将自己置于第一视角，在本地自己进行转置处理 )
           role: {
-            index: null, // 叫地主顺序
-            type: null, // 角色类型
+            type: -1, // 角色类型
             text: '' // 角色类型解释说明
           },
           user: {
@@ -44,15 +44,15 @@ export default {
             cards_fu: [],
             deathList: [],
             isMingPai: false,
-            jiaoDiZhu: -1
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
           }
         },
         {
           cardIndex: 1,
           weizhiIndex: 1,
           role: {
-            index: null, // 叫地主顺序
-            type: null, // 角色类型
+            type: -1, // 角色类型
             text: '' // 角色类型解释说明
           },
           user: {
@@ -66,15 +66,15 @@ export default {
             cards_fu: [],
             deathList: [],
             isMingPai: false,
-            jiaoDiZhu: -1
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
           }
         },
         {
           cardIndex: 2,
           weizhiIndex: 2,
           role: {
-            index: null, // 叫地主顺序
-            type: null, // 角色类型
+            type: -1, // 角色类型
             text: '' // 角色类型解释说明
           },
           user: {
@@ -88,11 +88,9 @@ export default {
             cards_fu: [],
             deathList: [],
             isMingPai: false,
-            jiaoDiZhu: -1
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
           }
-        },
-        { // 底牌
-          cards: []
         }
       ]
     },
@@ -139,23 +137,25 @@ export default {
       state.httpServer.emit('chu-pai', state.info);
     },
     chupaiEvent (state) {
-      state.info.mine.desk.chupaiObj.cardShow = true;
-      state.info.mine.desk.chupaiObj.status = false;
-      state.info.mine.desk.active = [];
-      var mine = state.info.mine.desk.cards;
+      let mine = state.info.list[0];
+      mine.desk.active = [];
+
       var mineNew = [];
       var playCards = [];
-      for (let i = 0; i < mine.length; i++) {
-        if (mine[i].checked) {
-          mine[i].alive = false;
-          playCards.push(mine[i]);
+      for (let i = 0; i < mine.desk.cards.length; i++) {
+        if (mine.desk.cards[i].checked) {
+          mine.desk.cards[i].alive = false;
+          playCards.push(mine.desk.cards[i]);
         } else {
-          mineNew.push(mine[i]);
+          mineNew.push(mine.desk.cards[i]);
         }
       }
-      state.info.mine.desk.cards = mineNew;
-      state.info.mine.desk.active = playCards.reverse();
-      state.info.mine.desk.deathList.push(state.info.mine.desk.active);
+
+      mine.desk.cards = mineNew;
+      mine.desk.active = playCards.reverse();
+      mine.desk.deathList.push(mine.desk.active);
+      state.info.commonInfo.chupaiIndex++;
+      state.info.commonInfo.activeCards = mine.desk.active;
       // console.log(robot.judgeCardType(state.info.mine.desk.active)); // 测试判断出牌类型
       state.httpServer.emit('chu-pai', state.info);
     }
@@ -199,18 +199,6 @@ function client (state, httpServer) {
     state.deskStatus.shift();
   });
   httpServer.on('chu-pai', (info) => { // 出牌
-    console.log(info);
-    var a = '';
-    var b = '';
-    for (var i = 0; i < info.cards.length; i++) {
-      a += info.cards[i].text.toString() + ' ';
-    }
-    for (var j = 0; j < info.arr.length; j++) {
-      for (var k = 0; k < info.arr[j].length; k++) {
-        b += info.arr[j][k].text.toString() + ' ';
-      }
-      b += '　 ';
-    }
-    console.log(a + '\n' + b);
+    state.info = info;
   });
 }
