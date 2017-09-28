@@ -16,15 +16,15 @@
 
     <div class="control">
       <div class="control-position">
-        <!-- <div class="play-card" v-show="info.mine.desk.chupaiObj.cardShow">
-          <template v-for="item in active">
+        <div class="play-card" v-show="deskStatus[0] === 'chupai'">
+          <template v-for="item in listItem.desk.active">
             <li-card :item="item" :show="true" type="small"></li-card>
           </template>
           <div style="width: 30px"></div>
-        </div> -->
-        <!-- <div class="play-tip" v-show="info.mine.desk.chupaiObj.textShow">
+        </div>
+        <div class="play-tip" v-show="listItem.control.activeType = 1 && listItem.desk.cards.length === 0 && deskStatus[0] === 'chupai'">
           <div class="control-text">不出</div>
-        </div> -->
+        </div>
         <div class="play-control">
           <div class="control-box-btn" v-show="deskStatus[0] === 'start'">
             <div class="btn width" @click="startEvent(5)">明牌开始<span class="span"> X5</span></div>

@@ -22,7 +22,8 @@ export default {
         commonTimes: 15,
         jiaodizhuArr: [],
         diPaiInfo: { // 底牌
-          cards: []
+          cards: [],
+          score: 15
         }
       },
       list: [
@@ -38,14 +39,17 @@ export default {
             name: '深藏blue',
             money: 20580
           },
+          control: {
+            isMingPai: false,
+            activeType: 1, // 1： 正常   2：不出    其他的预留
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
+          },
           desk: {
             active: [],
             cards: [],
             cards_fu: [],
-            deathList: [],
-            isMingPai: false,
-            jiaoDiZhu: -1,
-            jiaoDiZhuFourth: -1
+            deathList: []
           }
         },
         {
@@ -60,14 +64,17 @@ export default {
             name: '百里藏锋',
             money: 1860
           },
+          control: {
+            isMingPai: false,
+            activeType: 1,
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
+          },
           desk: {
             active: [],
             cards: [],
             cards_fu: [],
-            deathList: [],
-            isMingPai: false,
-            jiaoDiZhu: -1,
-            jiaoDiZhuFourth: -1
+            deathList: []
           }
         },
         {
@@ -82,14 +89,17 @@ export default {
             name: '远古天魔蟒',
             money: 60000
           },
+          control: {
+            isMingPai: false,
+            activeType: 1,
+            jiaoDiZhu: -1,
+            jiaoDiZhuFourth: -1
+          },
           desk: {
             active: [],
             cards: [],
             cards_fu: [],
-            deathList: [],
-            isMingPai: false,
-            jiaoDiZhu: -1,
-            jiaoDiZhuFourth: -1
+            deathList: []
           }
         }
       ]
@@ -125,15 +135,16 @@ export default {
       client(state, httpServer);
     },
     bujiaoEvent (state) {
-      state.info.list[0].desk.jiaoDiZhu = 1;
+      state.info.list[0].control.jiaoDiZhu = 1;
       state.httpServer.emit('jiao-di-zhu', state.info);
     },
     jiaodizhuEvent (state) {
-      state.info.list[0].desk.jiaoDiZhu = 1;
+      state.info.list[0].control.jiaoDiZhu = 1;
       state.httpServer.emit('jiao-di-zhu', state.info);
     },
     buchuEvent (state) {
-      state.info.mine.desk.chupaiObj.textShow = true;
+      state.info.list[0].control.activeType = 2;
+      state.info.list[0].desk.active = [];
       state.httpServer.emit('chu-pai', state.info);
     },
     chupaiEvent (state) {
@@ -146,16 +157,16 @@ export default {
         if (mine.desk.cards[i].checked) {
           mine.desk.cards[i].alive = false;
           playCards.push(mine.desk.cards[i]);
-        } else {
-          mineNew.push(mine.desk.cards[i]);
-        }
+        } else mineNew.push(mine.desk.cards[i]);
       }
-
+      if (playCards.length === 0) return;
+      state.info.list[0].control.activeType = 1; // 出牌了
       mine.desk.cards = mineNew;
       mine.desk.active = playCards.reverse();
       mine.desk.deathList.push(mine.desk.active);
       state.info.commonInfo.chupaiIndex++;
       state.info.commonInfo.activeCards = mine.desk.active;
+      state.info.list[state.info.commonInfo.chupaiIndex].desk.active = [];
       // console.log(robot.judgeCardType(state.info.mine.desk.active)); // 测试判断出牌类型
       state.httpServer.emit('chu-pai', state.info);
     }
@@ -196,9 +207,15 @@ function client (state, httpServer) {
   });
   httpServer.on('jiao-di-zhu-success', (info) => { // 叫地主 -- 收到的回复
     state.info = info;
+    console.log(info);
     state.deskStatus.shift();
   });
   httpServer.on('chu-pai', (info) => { // 出牌
+    for (let i = 0; i < 3; i++) {
+      info.list[i].desk.cards = sort(info.list[i].desk.cards);
+    }
     state.info = info;
+    if (info.commonInfo.chupaiIndex !== 0) state.httpServer.emit('chu-pai', state.info);
+    else state.info.list[info.commonInfo.chupaiIndex].desk.active = [];
   });
 }

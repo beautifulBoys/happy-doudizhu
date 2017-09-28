@@ -27,7 +27,7 @@
           </template>
         </div>
         <div class="control">
-          <div class="tip" v-show="tipShow">不出</div>
+          <div class="tip" v-show="deskStatus[0] === 'chupai' && listItem.control.activeType === 2">不出</div>
           <!-- <li-clock :second="countDown" v-model="clockStatus"></li-clock> -->
         </div>
       </div>
@@ -52,7 +52,9 @@
     },
     computed: {
       ...mapState({
-        listItem: state => state.desk.info.list[2]
+        listItem: state => state.desk.info.list[2],
+        deskStatus: state => state.desk.deskStatus,
+        commonInfo: state => state.desk.info.commonInfo
       }),
       ...mapGetters(['cardsCount']),
       ...mapMutations([]),

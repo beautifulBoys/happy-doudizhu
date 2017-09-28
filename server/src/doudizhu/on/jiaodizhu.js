@@ -1,6 +1,10 @@
 
 var on_user = require('./user.js');
-
+function sortBig (arr) {
+  return arr.sort((a, b) => {
+    return b.value - a.value;
+  });
+}
 function judge (socket, info) {
   info.list[0].role = {
     type: 1, // 角色类型 1:地主   0:农民  -1:初始值
@@ -15,6 +19,7 @@ function judge (socket, info) {
     text: '农民' // 角色类型解释说明
   };
   info.list[0].desk.cards = info.list[0].desk.cards.concat(info.commonInfo.diPaiInfo.cards);
+  sortBig(info.list[0].desk.cards);
   socket.emit('jiao-di-zhu-success', info);
   /*
   这部分代码用于后期建设。
@@ -23,17 +28,17 @@ function judge (socket, info) {
 
   if (info.commonInfo.jiaodizhuArr.length === 3) { // 已经是第四次叫地主了
     for (let i = 0; i < list.length; i++) {
-      if (list[i].desk.jiaoDiZhuFourth !== -1) {
+      if (list[i].control.jiaoDiZhuFourth !== -1) {
         info.commonInfo.jiaodizhuArr.push({
           cardIndex: list[i].cardIndex,
-          value: list[i].desk.jiaoDiZhuFourth
+          value: list[i].control.jiaoDiZhuFourth
         });
       }
     }
   } else { // 前三次叫地主
     info.commonInfo.jiaodizhuArr = [];
     for (let i = 0; i < list.length; i++) {
-      if (list[i].desk.jiaoDiZhu === -1) break;
+      if (list[i].control.jiaoDiZhu === -1) break;
       else {
         info.commonInfo.jiaodizhuArr.push({
           cardIndex: list[i].cardIndex,
