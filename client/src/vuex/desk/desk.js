@@ -144,6 +144,7 @@ export default {
     },
     buchuEvent (state) {
       state.info.list[0].control.activeType = 2;
+      state.info.commonInfo.chupaiIndex++;
       state.info.list[0].desk.active = [];
       state.httpServer.emit('chu-pai', state.info);
     },
