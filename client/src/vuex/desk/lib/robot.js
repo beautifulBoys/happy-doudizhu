@@ -1,4 +1,6 @@
-
+/*
+这个文件是机器人文件，以后会分为不同的模块
+*/
 function robot (arr, active) { // 机器人
   if (active) {
 
