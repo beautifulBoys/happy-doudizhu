@@ -256,7 +256,6 @@ function sortMap (arr) { // 拆牌
 }
 
 function choice () { // 选择出牌
-
 }
 
 module.exports = {
