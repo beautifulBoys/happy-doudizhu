@@ -45,13 +45,13 @@
 
 <style lang="less" scoped>
   .card-box {
-    width: 28px;
+    width: 30px;
     height: 110px;
     display: inline-block;
     text-align: center;
     z-index: 100;
     &.checked {
-      margin-top: -20px;
+      margin-top: -25px;
     }
     .card {
       width: 80px;
@@ -72,7 +72,7 @@
         background-size: 70px;
       }
       .div {
-        width: 28px;
+        width: 30px;
         height: 100%;
         text-align: center;
         font-size: 20px;
@@ -84,12 +84,12 @@
           transform: rotate(180deg);
         }
         .img {
-          width: 15px;
+          width: 18px;
         }
         .text {
           width: 100%;
-          height: 25px;
-          font-size: 25px;
+          height: 26px;
+          font-size: 26px;
           font-family: Arial;
           &.joker {
             font-size: 16px;

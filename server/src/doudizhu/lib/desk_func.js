@@ -13,5 +13,5 @@ function chupaizhihuan (info, active) { // 确定出牌后，处理牌的逻辑
   return info;
 }
 
-modele.exports.jiaodizhu = jiaodizhu;
-modele.exports.chupaizhihuan = chupaizhihuan;
+module.exports.jiaodizhu = jiaodizhu;
+module.exports.chupaizhihuan = chupaizhihuan;

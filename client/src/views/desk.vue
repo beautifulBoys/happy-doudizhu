@@ -1,16 +1,21 @@
 <template>
-  <div class="desk">
-    <div class="body">
-      <div class="top-box">
-        <div class="top" v-show="start">
-          <desk-first></desk-first>
-          <desk-second></desk-second>
-        </div>
-      </div>
-      <desk-mine></desk-mine>
+  <div class="room">
+    <div class="background">
+      <img class="img" src="../images/bg.jpg"/>
     </div>
-    <div class="bottom-box">
-      <desk-bottom></desk-bottom>
+    <div class="desk">
+      <div class="body">
+        <div class="top-box">
+          <div class="top" v-show="start">
+            <desk-first></desk-first>
+            <desk-second></desk-second>
+          </div>
+        </div>
+        <desk-mine></desk-mine>
+      </div>
+      <div class="bottom-box">
+        <desk-bottom></desk-bottom>
+      </div>
     </div>
   </div>
 </template>
@@ -52,30 +57,46 @@
   };
 </script>
 <style lang="less" scoped>
-  .desk {
+  .room {
     width: 100%;
     height: 100%;
-    background: #eee url(../images/desk_bg.jpg) no-repeat center center;
-    background-size: 113%;
-    display: flex;
-    flex-flow: column;
-    .body {
-      flex: 1;
-      display: flex;
-      flex-flow: column;
-      .top-box {
-        flex: 1;
-        display: flex;
-        .top {
-          width: 100%;
-          height: 100%;
-          display: flex;
-        }
+    position: relative;
+    top: 0;
+    left: 0;
+    .background {
+      width: 100%;
+      height: 100%;
+      .img {
+        width: 100%;
       }
     }
-    .bottom-box {
-      height: 40px;
+    .desk {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-flow: column;
+      background: url(../images/desk_bg.png) no-repeat center 200%;
+      background-size: 100%;
+      .body {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        .top-box {
+          flex: 1;
+          display: flex;
+          .top {
+            width: 100%;
+            height: 100%;
+            display: flex;
+          }
+        }
+      }
+      .bottom-box {
+        height: 40px;
+      }
     }
-
   }
 </style>
