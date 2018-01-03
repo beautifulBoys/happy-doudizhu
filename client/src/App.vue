@@ -35,7 +35,6 @@ export default {
     height: 100%;
     padding: 0;
     margin: 0;
-    background: red;
     // transform: rotate(90deg);
   }
 </style>

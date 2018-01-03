@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import desk from '@/views/desk.vue';
+import room from '@/views/room.vue';
 import screen from '@/views/screen.vue';
 
 Vue.use(Router);
@@ -13,9 +13,9 @@ export default new Router({
       component: screen
     },
     {
-      path: '/desk',
-      name: 'desk',
-      component: desk
+      path: '/room',
+      name: 'room',
+      component: room
     }
   ]
 });

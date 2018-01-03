@@ -1,16 +1,24 @@
 <template>
-  <div class="card-box" :class="{small: type === 'small', checked: item.checked && canActive}">
+  <div class="card-box"
+    :class="{middle: type === 'middle', small: type === 'small', checked: item.checked && canActive}"
+  >
     <div class="card" :class="{bg: !show, act: canActive}" @click="checkEvent()">
-      <div class="div" v-for="item2 in card" :class="item2" v-show="show">
+      <div class="div fleft" v-show="show" >
         <div v-if="item.type === 'k'"><!--大小王-->
           <div class="text joker" :class="{a: item.text === 'b'}" v-for="item1 in joker">{{item1}}</div>
         </div>
         <div v-if="item.type !== 'k'"><!--四色牌-->
           <div class="text" :class="item.type">{{item.text}}</div>
-          <img src="../images/card_icon_a.png" class="img" v-if="item.type === 'a'"/>
-          <img src="../images/card_icon_b.png" class="img" v-if="item.type === 'b'"/>
-          <img src="../images/card_icon_c.png" class="img" v-if="item.type === 'c'"/>
-          <img src="../images/card_icon_d.png" class="img" v-if="item.type === 'd'"/>
+          <img :src="cardIconData[item.type]" class="img"/>
+        </div>
+      </div>
+      <div class="div fright" v-if="type !== 'small'" v-show="show" >
+        <div v-if="item.type === 'k'"><!--大小王-->
+          <div class="text joker" :class="{a: item.text === 'b'}" v-for="item1 in joker">{{item1}}</div>
+        </div>
+        <div v-if="item.type !== 'k'"><!--四色牌-->
+          <div class="text" :class="item.type">{{item.text}}</div>
+          <img :src="cardIconData[item.type]" class="img"/>
         </div>
       </div>
     </div>
@@ -24,12 +32,13 @@
   梅花： c
   方块： d
 */
+  import cardIconData from '../lib/data/card.json';
   export default {
     props: ['item', 'show', 'type', 'canActive'],
     data () {
       return {
         joker: ['J', 'O', 'K', 'E', 'R'],
-        card: ['fleft', 'fright'],
+        cardIconData,
         checked: false
       };
     },
@@ -46,7 +55,7 @@
 <style lang="less" scoped>
   .card-box {
     width: 30px;
-    height: 110px;
+    height: 100px;
     display: inline-block;
     text-align: center;
     z-index: 100;
@@ -54,7 +63,7 @@
       margin-top: -25px;
     }
     .card {
-      width: 80px;
+      width: 74px;
       height: 100%;
       border: 1px solid #999;
       border-radius: 5px;
@@ -64,7 +73,7 @@
       box-sizing: border-box;
       &.act {
         &:active {
-          background: #ddd;
+          background: #ccc;
         }
       }
       &.bg {
@@ -112,13 +121,22 @@
         }
       }
     }
-    &.small {
-      width: 18px;
+    &.middle {
+      width: 20px;
       height: 30px;
       transform: scale(0.6);
       .card {
         width: 70px;
         height: 90px;
+      }
+    }
+    &.small {
+      width: 18px;
+      height: 33px;
+      transform: scale(0.6);
+      .card {
+        width: 55px;
+        height: 65px;
       }
     }
   }

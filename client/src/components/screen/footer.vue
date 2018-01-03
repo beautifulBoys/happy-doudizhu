@@ -13,7 +13,7 @@
 <style lang="less" scoped>
   .footer {
     width: 100%;
-    height: 40px;
-    background: blue;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.5);
   }
 </style>

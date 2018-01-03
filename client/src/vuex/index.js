@@ -1,11 +1,11 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
-import desk from './desk';
+import room from './room.js';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    desk
+    room
   }
 });
