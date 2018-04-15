@@ -4,7 +4,7 @@
       <img class="img" src="../images/bg.jpg"/>
     </div>
     <div class="desk">
-      <img style="width: 100%;position: absolute; bottom: 0;left: 0;height: 70%;" src="../images/desk_bg.png" />
+      <img class="desk-bg" src="../images/desk_bg.png" />
       <div class="body">
         <div class="header">
           <div class="left">
@@ -46,7 +46,7 @@
   import bottomCode from '../components/room/bottom.vue';
   import Card from '../components/card.vue';
   import Model from '../components/model.vue';
-  import io from '../lib/socket.io.js';
+  // import io from '../lib/socket.io.js';
   export default {
     components: {
       'room-first': firstCode,
@@ -75,7 +75,7 @@
       ...mapMutations([])
     },
     mounted () {
-      console.log(io);
+      // console.log(io);
       // this.$store.commit('create');
     },
     methods: {
@@ -111,6 +111,13 @@
       left: 0;
       display: flex;
       flex-flow: column;
+      .desk-bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 70%;
+      }
       .body {
         flex: 1;
         display: flex;

@@ -49,7 +49,7 @@
     .card {
       width: 1.48rem;
       height: 100%;
-      border: 1px solid #999;
+      border: 1px solid #bbb;
       border-radius: 0.1rem;
       background: #fff;
       text-align: left;

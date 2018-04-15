@@ -24,10 +24,12 @@
       </div>
     </div>
     <div class="right">
-      <img src="../../images/nongmin2.png"/>
-      <div class="user">
-        <div class="name">呵呵呵呵</div>
-        <div class="text">32万</div>
+      <div class="user-box">
+        <img src="../../images/nongmin2.png"/>
+        <div class="user">
+          <div class="name">呵呵呵呵</div>
+          <div class="text">32万</div>
+        </div>
       </div>
     </div>
   </div>
@@ -75,25 +77,33 @@
     .right {
       width: 1.8rem;
       font-size: 0;
-      img {
-        width: 90%;
-        margin-top: 0.2rem;
-      }
-      .user {
-        width: 1rem;
-        text-align: center;
-        margin-top: 0.1rem;
-        background: rgba(0, 0, 0, 0.4);
-        border-radius: 0.4rem 0 0 0.4rem;
-        padding: 0.04rem 0.2rem 0.04rem -0.3rem;
-        font-size: 0.24rem;
-        float: right;
-        color: #fff;
-        .text {
-          color: #fbd68c;
-          font-size: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .user-box {
+        width: 100%;
+        height: 3rem;
+        img {
+          width: 90%;
+          margin-top: 0.2rem;
+        }
+        .user {
+          width: 1rem;
+          text-align: center;
+          margin-top: 0.1rem;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 0.4rem 0 0 0.4rem;
+          padding: 0.04rem 0.2rem 0.04rem -0.3rem;
+          font-size: 0.24rem;
+          float: right;
+          color: #fff;
+          .text {
+            color: #fbd68c;
+            font-size: 0.2rem;
+          }
         }
       }
+
     }
     .left {
       flex: 1;
