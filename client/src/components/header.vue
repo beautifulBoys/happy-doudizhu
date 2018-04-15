@@ -35,18 +35,18 @@
 @import "../lib/css/1px.less";
   .header {
     width: 100%;
-    height: 45px;
+    height: 40px;
     display: flex;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 0 30px;
+    padding: 0 20px;
     box-sizing: border-box;
     .border-1px-bottom(rgba(255,255,255,0.3));
     .back {
       height: 100%;
-      width: 45px;
+      width: 40px;
       background: url(../images/back.png) no-repeat center center;
-      background-size: 40px;
+      background-size: 33px;
       margin-right: 5px;
 
       &:active {
@@ -56,8 +56,8 @@
     .user-icon {
       padding: 4px;
       box-sizing: border-box;
-      height: 45px;
-      width: 45px;
+      height: 40px;
+      width: 40px;
       img {
         width: 100%;
         height: 100%;
@@ -67,12 +67,12 @@
       }
     }
     .user-info {
-      padding: 5px;
+      padding: 5px 0 5px 2px;
       font-size: 14px;
       .name {
-        font-size: 16px;
+        font-size: 15px;
         color: #fff;
-        line-height: 20px;
+        line-height: 16px;
         text-shadow: 0 0 5px rgba(0,0,0,0.5);
       }
       .level {
@@ -83,24 +83,25 @@
     }
     .center {
       flex: 1;
-      height: 45px;
+      height: 40px;
       display: flex;
       .center-item {
         display: flex;
-        margin: 8px 10px;
+        margin: 6px 10px;
         background: rgba(0, 0, 0, 0.4);
         border-radius: 15px;
         color: #ffe686;
         font-weight: 700;
-        line-height: 28px;
+        line-height: 26px;
         font-size: 20px;
         box-shadow: 0 0 5px rgba(49, 37, 28, 0.5) inset;
         border: 1px solid #444;
         text-align: center;
         box-sizing: border-box;
         .l, .r {
-          height: 29px;
-          width: 29px;
+          height: 26px;
+          width: 26px;
+          transform: scale(1.2);
         }
         .c {
           flex: 1;
@@ -109,13 +110,13 @@
           flex: 1;
           .l {
             background: url(../images/diamond.png) no-repeat center center;
-            background-size: 40px;
+            background-size: 30px;
           }
           .r {
             background: url(../images/add.png) no-repeat center center;
-            background-size: 35px;
+            background-size: 30px;
             &:active {
-              transform: scale(0.85);
+              transform: scale(1);
             }
           }
         }
@@ -123,34 +124,34 @@
           flex: 1;
           .l {
             background: url(../images/bean.png) no-repeat center center;
-            background-size: 40px;
+            background-size: 30px;
           }
           .r {
             background: url(../images/add.png) no-repeat center center;
-            background-size: 35px;
+            background-size: 30px;
             &:active {
-              transform: scale(0.85);
+              transform: scale(1);
             }
           }
         }
       }
     }
     .gift {
-      width: 45px;
-      height: 45px;
+      width: 40px;
+      height: 40px;
       margin: 0 3px;
       background: url(../images/gift.png) no-repeat center center;
-      background-size: 35px;
+      background-size: 33px;
       &:active {
         transform: scale(0.9);
       }
     }
     .setting {
-      width: 45px;
-      height: 45px;
+      width: 40px;
+      height: 40px;
       margin: 0 3px;
       background: url(../images/setting.png) no-repeat center center;
-      background-size: 35px;
+      background-size: 33px;
       &:active {
         transform: scale(0.9);
       }

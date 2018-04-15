@@ -18,7 +18,7 @@
           <div class="right">
             <div class="tuoguan"></div>
             <div class="huanzhuo"></div>
-            <div class="shezhi"></div>
+            <div class="shezhi" @click="settingShow = true"></div>
           </div>
         </div>
         <div class="top-box">
@@ -33,6 +33,7 @@
         <room-bottom></room-bottom>
       </div>
     </div>
+    <li-model :show="settingShow" @close="modelCloseEvent"></li-model>
   </div>
 </template>
 
@@ -43,6 +44,7 @@
   import mineCode from '../components/room/mine.vue';
   import bottomCode from '../components/room/bottom.vue';
   import Card from '../components/card.vue';
+  import Model from '../components/model.vue';
   import io from '../lib/socket.io.js';
   export default {
     components: {
@@ -50,10 +52,12 @@
       'room-second': secondCode,
       'room-mine': mineCode,
       'room-bottom': bottomCode,
-      'li-card': Card
+      'li-card': Card,
+      'li-model': Model
     },
     data () {
       return {
+        settingShow: false,
         active: [
           {id: '0', checked: false, alive: true, type: 'a', text: 'A', value: 14},
           {id: '1', checked: false, alive: true, type: 'a', text: '2', value: 16},
@@ -76,6 +80,9 @@
     methods: {
       sortEvent () {
         this.$store.commit('sort');
+      },
+      modelCloseEvent () {
+        this.settingShow = false;
       }
     }
   };
@@ -125,7 +132,7 @@
               width: 40px;
               height: 40px;
               background: url(../images/back.png) no-repeat center center;
-              background-size: 35px;
+              background-size: 33px;
               &:active {
                 transform: scale(0.9);
               }
@@ -184,7 +191,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: -20px;
+            margin-top: -17px;
           }
         }
         .top-box {

@@ -132,11 +132,11 @@
     }
     &.small {
       width: 18px;
-      height: 33px;
+      height: 32px;
       transform: scale(0.6);
       .card {
-        width: 55px;
-        height: 65px;
+        width: 50px;
+        height: 60px;
       }
     }
   }

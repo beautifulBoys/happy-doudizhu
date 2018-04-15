@@ -11,12 +11,15 @@
             <div class="line" v-for="(item, index) in config">
               <div class="item-box" v-for="(item1, index1) in item.list">
                 <div :class="[{active: (index === active[0] && index1 === active[1])}, item1.class, 'item']" @click="choiceRoomEvent(index, index1)">
-                  <div class="title">{{item1.title}}</div>
-                  <div class="score">
-                    <span class="left">底分</span>
-                    <span class="right">{{item1.score}}</span>
+                  <div class="other">
+                    <img src="../images/buxipai_icon.png" v-if="item.type === 1"/>
+                    <div class="title">{{item1.title}}</div>
+                    <div class="score">
+                      <span class="left">底分</span>
+                      <span class="right">{{item1.score}}</span>
+                    </div>
+                    <div class="bottom">欢乐豆：{{item1.desc}}</div>
                   </div>
-                  <div class="bottom">欢乐豆：{{item1.desc}}</div>
                 </div>
               </div>
             </div>
@@ -42,7 +45,7 @@
         config: [
           {
             type: 0,
-            text: '不洗牌',
+            text: '洗牌',
             list: [
               {title: '新手场', class: 'color0', score: 8, desc: '1000 ~ 10万', active: false},
               {title: '初级场', class: 'color1', score: 20, desc: '2000 ~ 30万', active: false},
@@ -54,7 +57,7 @@
           },
           {
             type: 1,
-            text: '洗牌',
+            text: '不洗牌',
             list: [
               {title: '新手场', class: 'color0', score: 8, desc: '1000 ~ 10万', active: false},
               {title: '初级场', class: 'color1', score: 20, desc: '2000 ~ 30万', active: false},
@@ -113,6 +116,7 @@
           height: 100%;
           padding: 5px 10px;
           box-sizing: border-box;
+          border-radius: 7px;
           background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
           box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
           border-image: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255,0)) 1 1;
@@ -145,8 +149,20 @@
                   box-sizing: border-box;
                   font-size: 16px;
                   color: #fff;
-                  display: flex;
-                  flex-flow: column;
+                  .other {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    display: flex;
+                    flex-flow: column;
+                    img {
+                      width: 60px;
+                      position: absolute;
+                      top: -4px;
+                      left: -4px;
+                    }
+                  }
+
                   &.color0 {
                     background: linear-gradient(180deg, #add764, #3f7a11);
                   }
@@ -173,7 +189,7 @@
                   }
                   .title {
                     width: 100%;
-                    line-height: 40px;
+                    line-height: 45px;
                     text-align: center;
                     font-size: 25px;
                     color: rgba(255,255,255,1);
@@ -233,8 +249,7 @@
           box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
           background: linear-gradient(180deg, rgb(255,255,52), rgb(219,118,8));
           &:active {
-            background: rgb(255,190,26);
-            box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+            transform: scale(0.9);
           }
         }
       }
