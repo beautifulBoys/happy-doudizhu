@@ -4,6 +4,7 @@
       <img class="img" src="../images/bg.jpg"/>
     </div>
     <div class="desk">
+      <img style="width: 100%;position: absolute; bottom: 0;left: 0;height: 70%;" src="../images/desk_bg.png" />
       <div class="body">
         <div class="header">
           <div class="left">
@@ -99,6 +100,7 @@
       height: 100%;
       .img {
         width: 100%;
+        height: 100%;
       }
     }
     .desk {
@@ -109,8 +111,6 @@
       left: 0;
       display: flex;
       flex-flow: column;
-      background: url(../images/desk_bg.png) no-repeat center 200%;
-      background-size: 100%;
       .body {
         flex: 1;
         display: flex;
@@ -207,6 +207,7 @@
       .bottom-box {
         height: 0.7rem;
         font-size: 0;
+        z-index: 10;
       }
     }
   }

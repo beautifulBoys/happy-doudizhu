@@ -1,8 +1,6 @@
 <template>
-  <div class="card-box"
-    :class="{middle: type === 'middle', small: type === 'small', checked: item.checked && canActive}"
-  >
-    <div class="card" :class="{bg: !show, act: canActive}" @click="checkEvent()">
+  <div class="card-box" :class="{middle: type === 'middle', small: type === 'small'}">
+    <div class="card" :class="{bg: !show, act: canActive, touch: item.touch, check: item.checked}">
       <div class="div fleft" v-show="show" >
         <div v-if="item.type === 'k'"><!--大小王-->
           <div class="text joker" :class="{a: item.text === 'b'}" v-for="item1 in joker">{{item1}}</div>
@@ -27,10 +25,7 @@
 
 <script>
 /*
-  红心： a
-  黑心： b
-  梅花： c
-  方块： d
+  红心： a ; 黑心： b ; 梅花： c ; 方块： d
 */
   import cardIconData from '../lib/data/card.json';
   export default {
@@ -38,16 +33,8 @@
     data () {
       return {
         joker: ['J', 'O', 'K', 'E', 'R'],
-        cardIconData,
-        checked: false
+        cardIconData
       };
-    },
-    methods: {
-      checkEvent () {
-        if (this.canActive) {
-          this.item.checked = !this.item.checked;
-        }
-      }
     }
   };
 </script>
@@ -59,9 +46,6 @@
     display: inline-block;
     text-align: center;
     z-index: 100;
-    &.checked {
-      margin-top: -0.5rem;
-    }
     .card {
       width: 1.48rem;
       height: 100%;
@@ -72,7 +56,10 @@
       padding: 0.1rem 0;
       box-sizing: border-box;
       &.act {
-        &:active {
+        &.check {
+          transform: translateY(-0.2rem);
+        }
+        &.touch {
           background: #ccc;
         }
       }
