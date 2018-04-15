@@ -54,22 +54,22 @@
 
 <style lang="less" scoped>
   .card-box {
-    width: 30px;
-    height: 100px;
+    width: 0.6rem;
+    height: 2rem;
     display: inline-block;
     text-align: center;
     z-index: 100;
     &.checked {
-      margin-top: -25px;
+      margin-top: -0.5rem;
     }
     .card {
-      width: 74px;
+      width: 1.48rem;
       height: 100%;
       border: 1px solid #999;
-      border-radius: 5px;
+      border-radius: 0.1rem;
       background: #fff;
       text-align: left;
-      padding: 5px 0;
+      padding: 0.1rem 0;
       box-sizing: border-box;
       &.act {
         &:active {
@@ -78,13 +78,13 @@
       }
       &.bg {
         background: url(../images/card_bg.png) no-repeat;
-        background-size: 70px;
+        background-size: 1.4rem;
       }
       .div {
-        width: 30px;
+        width: 0.6rem;
         height: 100%;
         text-align: center;
-        font-size: 20px;
+        font-size: 0.4rem;
         &.fleft {
           float: left;
         }
@@ -93,17 +93,17 @@
           transform: rotate(180deg);
         }
         .img {
-          width: 18px;
+          width: 0.36rem;
         }
         .text {
           width: 100%;
-          height: 26px;
-          font-size: 26px;
+          height: -0.52rem;
+          font-size: -0.52rem;
           font-family: Arial;
           &.joker {
-            font-size: 16px;
-            line-height: 16px;
-            height: 16px;
+            font-size: 0.32rem;
+            line-height: 0.32rem;
+            height: 0.32rem;
             font-weight: 500;
           }
           &.a {
@@ -122,21 +122,21 @@
       }
     }
     &.middle {
-      width: 20px;
-      height: 30px;
+      width: 0.4rem;
+      height: 0.6rem;
       transform: scale(0.6);
       .card {
-        width: 70px;
-        height: 90px;
+        width: 1.4rem;
+        height: 1.8rem;
       }
     }
     &.small {
-      width: 18px;
-      height: 32px;
+      width: 0.36rem;
+      height: 0.64rem;
       transform: scale(0.6);
       .card {
-        width: 50px;
-        height: 60px;
+        width: 1rem;
+        height: 1.2rem;
       }
     }
   }

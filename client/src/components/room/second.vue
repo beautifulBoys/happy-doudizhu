@@ -5,7 +5,7 @@
         <template v-for="item in active">
           <li-card :item="item" :show="true" type="small"></li-card>
         </template>
-        <div style="width: 30px"></div>
+        <div style="width: 0.6rem"></div>
       </div>
       <div class="control-box">
         <div class="size">
@@ -67,66 +67,66 @@
   .second {
     flex: 1;
     height: 100%;
-    background-size: 100px;
+    background-size: 2rem;
     box-sizing: border-box;
     position: relative;
     display: flex;
-    margin-left: 50px;
+    margin-left: 1rem;
     .right {
-      width: 90px;
+      width: 1.8rem;
       font-size: 0;
       img {
         width: 90%;
-        margin-top: 10px;
+        margin-top: 0.2rem;
       }
       .user {
-        width: 50px;
+        width: 1rem;
         text-align: center;
-        margin-top: 5px;
-        background: rgba(0,0,0,0.4);
-        border-radius: 20px 0 0 20px;
-        padding: 2px 10px 2px 15px;
-        font-size: 12px;
+        margin-top: 0.1rem;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 0.4rem 0 0 0.4rem;
+        padding: 0.04rem 0.2rem 0.04rem -0.3rem;
+        font-size: 0.24rem;
         float: right;
         color: #fff;
         .text {
           color: #fbd68c;
-          font-size: 10px;
+          font-size: 0.2rem;
         }
       }
     }
     .left {
       flex: 1;
       font-size: 0;
-      margin-right: 30px;
+      margin-right: 0.6rem;
       .mingpai {
-        height: 60px;
+        height: 1.2rem;
         width: 100%;
         text-align: right;
       }
       .control-box {
         width: 100%;
-        height: 100px;
-        padding-right: 10px;
+        height: 2rem;
+        padding-right: 0.2rem;
         box-sizing: border-box;
         position: relative;
         text-align: right;
         .size {
-          width: 25px;
-          height: 30px;
+          width: 0.5rem;
+          height: 0.6rem;
           background: red;
           position: absolute;
-          top: 70px;
-          right: -30px;
+          top: 1.4rem;
+          right: -0.6rem;
           .text {
             width: 100%;
             height: 100%;
-            line-height: 30px;
+            line-height: 0.6rem;
             text-align: center;
-            font-size: 16px;
+            font-size: 0.32rem;
             color: #fff;
             font-weight: 900;
-            margin-top: -30px;
+            margin-top: -0.6rem;
           }
           img {
             width: 100%;
@@ -135,13 +135,13 @@
         }
         .control {
           width: 100%;
-          height: 50px;
+          height: 1rem;
           text-align: right;
           .tip {
             color: #ffcc33;
-            font-size: 25px;
+            font-size: 0.5rem;
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0.04rem 0.04rem 0.1rem rgba(0, 0, 0, 0.5);
           }
         }
       }

@@ -36,23 +36,23 @@
     .box {
       width: 80%;
       height: 80%;
-      background: rgba(255,255,255,0.3);
-      border-radius: 10px;
-      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 0.2rem;
+      padding: 0.1rem 0.2rem;
       box-sizing: border-box;
       position: relative;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       .close {
-        width: 32px;
-        height: 32px;
+        width: 0.64rem;
+        height: 0.64rem;
         background: #fff;
         position: absolute;
-        top: -14px;
-        right: -14px;
-        padding: 2px;
+        top: -0.28rem;
+        right: -0.28rem;
+        padding: 0.04rem;
         box-sizing: border-box;
         border-radius: 100%;
-        box-shadow: 0 0 4px rgba(0,0,0,0.8);
+        box-shadow: 0 0 0.08rem rgba(0, 0, 0, 0.8);
         &:active {
           transform: scale(0.9);
         }
@@ -60,10 +60,10 @@
           width: 100%;
           height: 100%;
           border-radius: 100%;
-          background: linear-gradient(180deg, rgb(240,154,118,0.2), rgb(187,64,6));
-          line-height: 23px;
+          background: linear-gradient(180deg, rgb(240, 154, 118, 0.2), rgb(187, 64, 6));
+          line-height: 0.46rem;
           text-align: center;
-          font-size: 28px;
+          font-size: 0.56rem;
           color: #fff;
         }
       }
@@ -73,18 +73,18 @@
         display: flex;
         flex-flow: column;
         .main-top {
-          height: 35px;
+          height: 0.7rem;
           text-align: center;
           color: #fff;
-          text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-          font-size: 20px;
+          text-shadow: 0.04rem 0.04rem 0.1rem rgba(0, 0, 0, 0.2);
+          font-size: 0.4rem;
           font-weight: 700;
-          line-height: 28px;
+          line-height: 0.56rem;
         }
         .main-bottom {
           flex: 1;
           background: rgb(249, 246, 238);
-          border-radius: 0 0 7px 7px;
+          border-radius: 0 0 0.14rem 0.14rem;
         }
       }
     }

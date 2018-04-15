@@ -35,72 +35,72 @@
 @import "../lib/css/1px.less";
   .header {
     width: 100%;
-    height: 40px;
+    height: 0.8rem;
     display: flex;
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 0 20px;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+    padding: 0 0.4rem;
     box-sizing: border-box;
-    .border-1px-bottom(rgba(255,255,255,0.3));
+    .border-1px-bottom(rgba(255, 255, 255, 0.3));
     .back {
       height: 100%;
-      width: 40px;
+      width: 0.8rem;
       background: url(../images/back.png) no-repeat center center;
-      background-size: 33px;
-      margin-right: 5px;
+      background-size: 0.66rem;
+      margin-right: 0.1rem;
 
       &:active {
         transform: scale(0.85);
       }
     }
     .user-icon {
-      padding: 4px;
+      padding: 0.08rem;
       box-sizing: border-box;
-      height: 40px;
-      width: 40px;
+      height: 0.8rem;
+      width: 0.8rem;
       img {
         width: 100%;
         height: 100%;
-        border: 2px solid #fff;
-        border-radius: 5px;
+        border: 0.04rem solid #fff;
+        border-radius: 0.1rem;
         box-sizing: border-box;
       }
     }
     .user-info {
-      padding: 5px 0 5px 2px;
-      font-size: 14px;
+      padding: 0.1rem 0 0.1rem 0.04rem;
+      font-size: 0.28rem;
       .name {
-        font-size: 15px;
+        font-size: 0.3rem;
         color: #fff;
-        line-height: 16px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        line-height: 0.32rem;
+        text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.5);
       }
       .level {
         color: #ffde2a;
-        font-size: 12px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.7);
+        font-size: 0.24rem;
+        text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.7);
       }
     }
     .center {
       flex: 1;
-      height: 40px;
+      height: 0.8rem;
       display: flex;
       .center-item {
         display: flex;
-        margin: 6px 10px;
+        margin: 0.12rem 0.2rem;
         background: rgba(0, 0, 0, 0.4);
-        border-radius: 15px;
+        border-radius: 0.3rem;
         color: #ffe686;
         font-weight: 700;
-        line-height: 26px;
-        font-size: 20px;
-        box-shadow: 0 0 5px rgba(49, 37, 28, 0.5) inset;
+        line-height: 0.52rem;
+        font-size: 0.4rem;
+        box-shadow: 0 0 0.1rem rgba(49, 37, 28, 0.5) inset;
         border: 1px solid #444;
         text-align: center;
         box-sizing: border-box;
         .l, .r {
-          height: 26px;
-          width: 26px;
+          height: 0.52rem;
+          width: 0.52rem;
           transform: scale(1.2);
         }
         .c {
@@ -110,11 +110,11 @@
           flex: 1;
           .l {
             background: url(../images/diamond.png) no-repeat center center;
-            background-size: 30px;
+            background-size: 0.6rem;
           }
           .r {
             background: url(../images/add.png) no-repeat center center;
-            background-size: 30px;
+            background-size: 0.6rem;
             &:active {
               transform: scale(1);
             }
@@ -124,11 +124,11 @@
           flex: 1;
           .l {
             background: url(../images/bean.png) no-repeat center center;
-            background-size: 30px;
+            background-size: 0.6rem;
           }
           .r {
             background: url(../images/add.png) no-repeat center center;
-            background-size: 30px;
+            background-size: 0.6rem;
             &:active {
               transform: scale(1);
             }
@@ -137,21 +137,21 @@
       }
     }
     .gift {
-      width: 40px;
-      height: 40px;
-      margin: 0 3px;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0 0.06rem;
       background: url(../images/gift.png) no-repeat center center;
-      background-size: 33px;
+      background-size: 0.66rem;
       &:active {
         transform: scale(0.9);
       }
     }
     .setting {
-      width: 40px;
-      height: 40px;
-      margin: 0 3px;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0 0.06rem;
       background: url(../images/setting.png) no-repeat center center;
-      background-size: 33px;
+      background-size: 0.66rem;
       &:active {
         transform: scale(0.9);
       }

@@ -116,23 +116,23 @@
         display: flex;
         flex-flow: column;
         .header {
-          height: 40px;
+          height: 0.8rem;
           width: 100%;
           display: flex;
           .left {
             width: 27%;
-            padding: 0 20px;
+            padding: 0 0.4rem;
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
-            border-radius: 0 0 40px 0;
+            border-radius: 0 0 0.8rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 0.05rem 0.15rem rgba(0,0,0,0.3);
             display: flex;
             .back {
-              width: 40px;
-              height: 40px;
+              width: 0.8rem;
+              height: 0.8rem;
               background: url(../images/back.png) no-repeat center center;
-              background-size: 33px;
+              background-size: 0.65rem;
               &:active {
                 transform: scale(0.9);
               }
@@ -142,45 +142,45 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: 18px;
+              font-size: 0.36rem;
               color: #eee;
             }
           }
           .right {
             width: 30%;
-            padding: 0 15px 0 30px;
+            padding: 0 0.3rem 0 0.6rem;
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
-            border-radius: 0 0 0 40px;
+            border-radius: 0 0 0 0.8rem;
             border-bottom: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            box-shadow: 0 0 0.1rem rgba(0,0,0,0.3);
             display: flex;
             .tuoguan {
-              width: 40px;
-              height: 40px;
+              width: 0.8rem;
+              height: 0.8rem;
               background: url(../images/tuoguan.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.7rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .huanzhuo {
-              width: 40px;
-              height: 40px;
+              width: 0.8rem;
+              height: 0.8rem;
               background: url(../images/huanzhuo.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.7rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .shezhi {
-              width: 40px;
-              height: 40px;
+              width: 0.8rem;
+              height: 0.8rem;
               background: url(../images/shezhi.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.7rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
@@ -191,7 +191,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: -17px;
+            margin-top: -0.34rem;
           }
         }
         .top-box {
@@ -205,7 +205,7 @@
         }
       }
       .bottom-box {
-        height: 35px;
+        height: 0.7rem;
         font-size: 0;
       }
     }

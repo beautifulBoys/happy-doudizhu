@@ -9,7 +9,7 @@
         <template v-for="item in cardActList">
           <li-card :item="item" :show="true" type="middle"></li-card>
         </template>
-        <div style="width: 30px"></div>
+        <div style="width: 0.6rem"></div>
       </div>
       <div class="play-control">
         <div class="control-box-btn" v-show="true">
@@ -128,36 +128,36 @@
     position: relative;
     .control {
       width: 100%;
-      height: 50px;
+      height: 1rem;
       position: absolute;
-      top: -50px;
+      top: -1rem;
       left: 0;
       font-size: 0;
       .btn {
-        width: 100px;
-        height: 40px;
+        width: 2rem;
+        height: 0.8rem;
         background: linear-gradient(180deg, #f2d903, #e6ba01, #d59300, #c15e03);
         text-align: center;
-        border-radius: 20px;
-        line-height: 38px;
-        font-size: 20px;
+        border-radius: 0.4rem;
+        line-height: 0.76rem;
+        font-size: 0.4rem;
         color: #fff;
         font-weight: 900;
-        text-shadow: 0 0 2px rgba(0,0,0,0.5);
-        box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        text-shadow: 0 0 0.04rem rgba(0, 0, 0, 0.5);
+        box-shadow: 0.06rem 0.06rem 0.1rem rgba(0, 0, 0, 0.3);
         display: inline-block;
-        margin: 0 10px;
+        margin: 0 0.2rem;
         .second {
-          font-size: 16px;
-          margin: 0 0 0 5px;
+          font-size: 0.32rem;
+          margin: 0 0 0 0.1rem;
         }
         &.width {
-          width: 140px;
+          width: 2.8rem;
           &.blue {
             background: linear-gradient(180deg, #09d1eb, #09a3e9, #0175c2, #005da3);
           }
           .span {
-            font-size: 16px;
+            font-size: 0.32rem;
           }
         }
         &:active {
@@ -165,15 +165,15 @@
         }
       }
       .start-box {
-        width: 320px;
-        height: 40px;
-        margin: 5px auto;
+        width: 6.4rem;
+        height: 0.8rem;
+        margin: 0.1rem auto;
       }
       .play-card {
         width: 100%;
         height: 100%;
         position: absolute;
-        top: -20px;
+        top: -0.4rem;
         left: 0;
         display: flex;
         justify-content: center;
@@ -184,18 +184,18 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 5px;
+        top: 0.1rem;
         left: 0;
         .control-box-btn {
           display: flex;
           justify-content: center;
           align-items: center;
           &.text {
-            padding-top: 15px;
+            padding-top: 0.3rem;
             color: #ffcc33;
-            font-size: 28px;
+            font-size: 0.56rem;
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0.04rem 0.04rem 0.1rem rgba(0, 0, 0, 0.5);
           }
 
         }
@@ -206,8 +206,8 @@
       flex: 1;
       display: flex;
       .left {
-        width: 100px;
-        min-width: 100px;
+        width: 2rem;
+        min-width: 2rem;
         font-size: 0;
         img {
           width: 90%;
@@ -215,12 +215,12 @@
         .user {
           width: 100%;
           text-align: center;
-          margin-top: 4px;
+          margin-top: 0.08rem;
           span {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            padding: 2px 15px;
-            font-size: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0.2rem;
+            padding: 0.04rem 0.3rem;
+            font-size: 0.24rem;
             color: #fff;
           }
         }
@@ -231,69 +231,10 @@
         justify-content: center;
         align-items: center;
         &.n17 {
-          margin-left: -90px;
+          margin-left: -1.8rem;
         }
       }
     }
   }
-  /*
-  .control {
-    position: absolute;
-    left: 0;
-    top: -45%;
-    width: 100%;
-    height: 40px;
-    .control-position {
-      width: 90%;
-      height: 100%;
-      margin-left: 10%;
-      position: relative;
-      .play-card {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .play-control {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        .control-box-btn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          &.text {
-            padding-top: 15px;
-            color: #ffcc33;
-            font-size: 28px;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-          }
 
-        }
-      }
-      .play-tip {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-top: 16px;
-        .control-text {
-          color: #ffcc33;
-          font-size: 25px;
-          font-weight: bold;
-          text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-          text-align: center;
-        }
-      }
-    }
-  }
-  */
 </style>

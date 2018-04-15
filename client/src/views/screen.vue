@@ -95,7 +95,7 @@
         width: 104%;
         margin-top: -2%;
         margin-left: -2%;
-        filter: blur(2px);
+        filter: blur(0.04rem);
       }
     }
     .box {
@@ -108,18 +108,18 @@
       flex-flow: column;
       .body {
         width: 100%;
-        padding: 10px 30px 50px 30px;
+        padding: 0.2rem 0.6rem 1rem 0.6rem;
         box-sizing: border-box;
         flex: 1;
         .way-box {
           width: 100%;
           height: 100%;
-          padding: 5px 10px;
+          padding: 0.1rem 0.2rem;
           box-sizing: border-box;
-          border-radius: 7px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
-          box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
-          border-image: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255,0)) 1 1;
+          border-radius: 0.14rem;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+          box-shadow: 0 -0.06rem 0.16rem rgba(0, 0, 0, 0.2);
+          border-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 1 1;
           border-width: 0.3px;
           border-style: solid;
           border-bottom: none;
@@ -132,22 +132,22 @@
             font-size: 0;
             .line {
               flex: 1;
-              width: 1150px;
+              width: 23rem;
               display: flex;
               .item-box {
                 flex: 1;
                 height: 100%;
-                padding: 8px;
+                padding: 0.16rem;
                 box-sizing: border-box;
                 display: inline-block;
                 .item {
                   width: 100%;
                   height: 100%;
-                  max-height: 120px;
-                  border-radius: 10px;
-                  border: 2px solid #fff;
+                  max-height: 2.4rem;
+                  border-radius: 0.2rem;
+                  border: 0.04rem solid #fff;
                   box-sizing: border-box;
-                  font-size: 16px;
+                  font-size: 0.32rem;
                   color: #fff;
                   .other {
                     width: 100%;
@@ -156,10 +156,10 @@
                     display: flex;
                     flex-flow: column;
                     img {
-                      width: 60px;
+                      width: 1.2rem;
                       position: absolute;
-                      top: -4px;
-                      left: -4px;
+                      top: -0.08rem;
+                      left: -0.08rem;
                     }
                   }
 
@@ -185,15 +185,15 @@
                     transform: scale(0.9);
                   }
                   &.active {
-                    border: 4px solid #ffd400;
+                    border: 0.08rem solid #ffd400;
                   }
                   .title {
                     width: 100%;
-                    line-height: 45px;
+                    line-height: 0.9rem;
                     text-align: center;
-                    font-size: 25px;
-                    color: rgba(255,255,255,1);
-                    text-shadow: 0 0 4px rgba(0,0,0,0.6);
+                    font-size: 0.5rem;
+                    color: rgba(255, 255, 255, 1);
+                    text-shadow: 0 0 0.08rem rgba(0, 0, 0, 0.6);
                   }
                   .score {
                     display: flex;
@@ -201,30 +201,30 @@
                     align-items: center;
                     .left {
                       text-align: center;
-                      background: rgba(255,255,255,0.35);
-                      padding: 3px 7px;
-                      line-height: 20px;
-                      font-size: 13px;
-                      color: rgba(255,255,255,0.9);
-                      border-radius: 15px 0 0 15px;
+                      background: rgba(255, 255, 255, 0.35);
+                      padding: 0.06rem 0.14rem;
+                      line-height: 0.4rem;
+                      font-size: 0.26rem;
+                      color: rgba(255, 255, 255, 0.9);
+                      border-radius: 0.3rem 0 0 0.3rem;
                     }
                     .right {
                       text-align: center;
-                      width: 40px;
-                      background: rgba(255,255,255,0.2);
-                      padding: 3px 7px;
-                      line-height: 20px;
-                      border-radius: 0 15px 15px 0;
+                      width: 0.8rem;
+                      background: rgba(255, 255, 255, 0.2);
+                      padding: 0.06rem 0.14rem;
+                      line-height: 0.4rem;
+                      border-radius: 0 0.3rem 0.3rem 0;
                     }
                   }
                   .bottom {
                     width: 100%;
                     flex: 1;
-                    background: rgba(0,0,0,0.3);
-                    margin-top: 8px;
-                    border-radius: 0 0 10px 10px;
-                    color: rgba(255,255,255,0.7);
-                    font-size: 13px;
+                    background: rgba(0, 0, 0, 0.3);
+                    margin-top: 0.16rem;
+                    border-radius: 0 0 0.2rem 0.2rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 0.26rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -235,19 +235,19 @@
           }
         }
         .start {
-          width: 120px;
-          height: 60px;
+          width: 2.4rem;
+          height: 1.2rem;
           position: fixed;
-          bottom: -10px;
+          bottom: -0.2rem;
           margin: 0 auto;
-          border-radius: 70px 70px 0 0;
-          line-height: 60px;
+          border-radius: 1.4rem 1.4rem 0 0;
+          line-height: 1.2rem;
           text-align: center;
           color: #fff;
-          font-size: 20px;
+          font-size: 0.4rem;
           font-weight: 700;
-          box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
-          background: linear-gradient(180deg, rgb(255,255,52), rgb(219,118,8));
+          box-shadow: 0 -0.1rem 0.2rem rgba(0,0,0,0.1);
+          background: linear-gradient(180deg, rgb(255, 255, 52), rgb(219, 118, 8));
           &:active {
             transform: scale(0.9);
           }
