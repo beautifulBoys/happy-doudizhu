@@ -31,12 +31,12 @@
   .bottom {
     width: 100%;
     height: 0.7rem;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    // box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
     padding: 0.1rem 0.3rem;
     box-sizing: border-box;
     font-size: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     .left {
       width: 2.6rem;
       height: 100%;

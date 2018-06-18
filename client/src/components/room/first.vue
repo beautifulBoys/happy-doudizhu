@@ -119,6 +119,12 @@
           padding: 0.04rem 0.3rem 0.04rem 0.2rem;
           font-size: 0.24rem;
           color: #fff;
+          .name {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; // 超出行数
+            overflow: hidden;
+          }
           .text {
             color: #fbd68c;
             font-size: 0.2rem;

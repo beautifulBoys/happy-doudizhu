@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="top-box">
-          <div class="top" v-show="false">
+          <div class="top" v-show="true">
             <room-first></room-first>
             <room-second></room-second>
           </div>
@@ -123,7 +123,7 @@
         display: flex;
         flex-flow: column;
         .header {
-          height: 0.8rem;
+          height: 0.75rem;
           width: 100%;
           display: flex;
           .left {
@@ -132,14 +132,14 @@
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
             border-radius: 0 0 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.25);
             box-shadow: 0 0.05rem 0.15rem rgba(0,0,0,0.3);
             display: flex;
             .back {
-              width: 0.8rem;
-              height: 0.8rem;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/back.png) no-repeat center center;
-              background-size: 0.65rem;
+              background-size: 0.6rem;
               &:active {
                 transform: scale(0.9);
               }
@@ -155,38 +155,38 @@
           }
           .right {
             width: 30%;
-            padding: 0 0.3rem 0 0.6rem;
+            padding: 0 0.2rem 0 0.6rem;
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
             border-radius: 0 0 0 0.8rem;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.25);
             box-shadow: 0 0 0.1rem rgba(0,0,0,0.3);
             display: flex;
             .tuoguan {
-              width: 0.8rem;
-              height: 0.8rem;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/tuoguan.png) no-repeat center center;
-              background-size: 0.7rem;
+              background-size: 0.6rem;
               margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .huanzhuo {
-              width: 0.8rem;
-              height: 0.8rem;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/huanzhuo.png) no-repeat center center;
-              background-size: 0.7rem;
+              background-size: 0.6rem;
               margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .shezhi {
-              width: 0.8rem;
-              height: 0.8rem;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/shezhi.png) no-repeat center center;
-              background-size: 0.7rem;
+              background-size: 0.6rem;
               margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);

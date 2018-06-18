@@ -93,10 +93,16 @@
           margin-top: 0.1rem;
           background: rgba(0, 0, 0, 0.4);
           border-radius: 0.4rem 0 0 0.4rem;
-          padding: 0.04rem 0.2rem 0.04rem -0.3rem;
+          padding: 0.04rem 0.2rem 0.04rem 0.3rem;
           font-size: 0.24rem;
           float: right;
           color: #fff;
+          .name {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; // 超出行数
+            overflow: hidden;
+          }
           .text {
             color: #fbd68c;
             font-size: 0.2rem;

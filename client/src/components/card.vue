@@ -49,7 +49,8 @@
     .card {
       width: 1.48rem;
       height: 100%;
-      border: 1px solid #bbb;
+      // border: 1px solid #bbb;
+      box-shadow: 0 0 0.15rem rgba(0,0,0,0.4);
       border-radius: 0.1rem;
       background: #fff;
       text-align: left;
@@ -115,6 +116,8 @@
       .card {
         width: 1.4rem;
         height: 1.8rem;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        border: 1px solid #ccc;
       }
     }
     &.small {
@@ -124,6 +127,8 @@
       .card {
         width: 1rem;
         height: 1.2rem;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        border: 1px solid #ddd;
       }
     }
   }
