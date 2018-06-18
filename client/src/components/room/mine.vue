@@ -60,11 +60,11 @@
     {id: '11', type: 'a', text: 'Q', value: 12},
     {id: '12', type: 'a', text: 'K', value: 13},
     {id: '13', type: 'b', text: 'A', value: 14},
-    {id: '14', type: 'b', text: '2', value: 16},
-    {id: '15', type: 'b', text: '3', value: 3},
-    {id: '16', type: 'b', text: '4', value: 4},
-    {id: '14', type: 'b', text: '2', value: 16},
-    {id: '15', type: 'b', text: '3', value: 3}
+    // {id: '14', type: 'b', text: '2', value: 16},
+    // {id: '15', type: 'b', text: '3', value: 3},
+    // {id: '16', type: 'b', text: '4', value: 4},
+    // {id: '14', type: 'b', text: '2', value: 16},
+    // {id: '15', type: 'b', text: '3', value: 3}
   ]
   export default {
     components: {
@@ -138,7 +138,7 @@
         })
       },
       initTouchFunc () {
-        this.$nextTick(() => {
+        setTimeout(() => {
           let lis = document.getElementsByClassName('mine-card-hook');
           for (let i = 0; i < lis.length; i++) {
             this.cardList[i].start = lis[i].offsetLeft;
@@ -161,7 +161,7 @@
               this.cardList[i].touch = false;
             }
           };
-        });
+        }, 100);
       },
       change (x) {
         for (let i = 0; i < this.cardList.length; i++) {
@@ -275,13 +275,16 @@
         .user {
           width: 100%;
           text-align: center;
-          margin-top: 0.08rem;
           span {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 0.2rem;
-            padding: 0.04rem 0.3rem;
+            padding: 0.04rem 0.2rem;
             font-size: 0.24rem;
             color: #fff;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; // 超出行数
+            overflow: hidden;
           }
         }
       }

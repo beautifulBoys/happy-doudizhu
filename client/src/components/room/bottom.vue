@@ -109,7 +109,7 @@
       }
     }
     .right {
-      width: 1.6rem;
+      width: 1.3rem;
       height: 100%;
       float: right;
       border-radius: 0.3rem;

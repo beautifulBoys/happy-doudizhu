@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="top-box">
-          <div class="top" v-show="true">
+          <div class="top" v-show="false">
             <room-first></room-first>
             <room-second></room-second>
           </div>
