@@ -11,6 +11,7 @@
             <div class="back" @click="$router.go(-1)"></div>
             <div class="time">21:08</div>
           </div>
+          
           <div class="center">
             <template v-for="item in active">
               <li-card :item="item" :show="true" type="small"></li-card>
