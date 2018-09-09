@@ -30,35 +30,35 @@
 <style lang="less"scoped>
   .bottom {
     width: 100%;
-    height: 35px;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-    padding: 5px 15px;
+    height: 0.7rem;
+    background: rgba(255, 255, 255, 0.1);
+    // box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+    padding: 0.1rem 0.3rem;
     box-sizing: border-box;
     font-size: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     .left {
-      width: 130px;
+      width: 2.6rem;
       height: 100%;
       float: left;
       display: flex;
       background: rgba(0, 0, 0, 0.4);
-      border-radius: 15px;
+      border-radius: 0.3rem;
       color: #ffe686;
       font-weight: 700;
-      line-height: 22px;
-      font-size: 20px;
-      box-shadow: 0 0 5px rgba(49, 37, 28, 0.5) inset;
+      line-height: 0.44rem;
+      font-size: 0.4rem;
+      box-shadow: 0 0 0.1rem rgba(49, 37, 28, 0.5) inset;
       border: 1px solid #444;
       text-align: center;
       box-sizing: border-box;
       .l {
-        height: 22px;
-        width: 22px;
+        height: 0.44rem;
+        width: 0.44rem;
       }
       .r {
-        height: 22px;
-        width: 22px;
+        height: 0.44rem;
+        width: 0.44rem;
         transform: scale(1.25);
       }
       .c {
@@ -68,88 +68,53 @@
         flex: 1;
         .l {
           background: url(../../images/bean.png) no-repeat center center;
-          background-size: 30px;
+          background-size: 0.6rem;
         }
         .r {
           background: url(../../images/add.png) no-repeat center center;
-          background-size: 25px;
+          background-size: 0.5rem;
           &:active {
             transform: scale(1.05);
           }
         }
       }
-      // height: 100%;
-      // background: rgba(0, 0, 0, 0.4);
-      // border-radius: 15px;
-      // color: #fbd68c;
-      // font-weight: 700;
-      // line-height: 22px;
-      // box-shadow: 0 0 5px rgba(49, 37, 28, 0.5) inset;
-      // border: 1px solid #444;
-      // text-align: center;
-      // box-sizing: border-box;
-      // float: left;
-      // display: flex;
-      // font-size: 18px;
-      // .bean {
-      //   width: 25px;
-      //   height: 100%;
-      //   background: url(../../images/bean.png) no-repeat center center;
-      //   background-size: 30px;
-      //   transform: scale(1.1);
-      // }
-      // .text {
-      //   flex: 1;
-      //   padding: 0 10px;
-      //   text-shadow: 3px 3px 3px rgba(49, 37, 28, 0.5);
-      // }
-      // .add {
-      //   width: 25px;
-      //   height: 100%;
-      //   background: url(../../images/add.png) no-repeat center center;
-      //   background-size: 25px;
-      //   transform: scale(1.3);
-      //   &:active {
-      //     transform: scale(1);
-      //   }
-      // }
     }
     .center {
-      width: 120px;
+      width: 2.4rem;
       height: 100%;
       background: rgba(0, 0, 0, 0.4);
-      border-radius: 15px;
+      border-radius: 0.3rem;
       color: #fbd68c;
       font-weight: 700;
-      line-height: 22px;
-      font-size: 18px;
-      box-shadow: 0 0 5px rgba(49, 37, 28, 0.5) inset;
+      line-height: 0.44rem;
+      font-size: 0.36rem;
+      box-shadow: 0 0 0.1rem rgba(49, 37, 28, 0.5) inset;
       border: 1px solid #444;
       text-align: center;
       box-sizing: border-box;
       float: right;
-      margin-right: 80px;
+      margin-right: 1.6rem;
       display: flex;
-      padding-right: 10px;
+      padding-right: 0.2rem;
       .text {
         flex: 1;
-        text-shadow: 3px 3px 3px rgba(49, 37, 28, 0.5);
+        text-shadow: 0.06rem 0.06rem 0.06rem rgba(49, 37, 28, 0.5);
       }
       .icon {
-        width: 22px;
-        height: 22px;
+        width: 0.44rem;
+        height: 0.44rem;
         background: url(../../images/bei.png) no-repeat center center;
-        background-size: 25px;
+        background-size: 0.5rem;
         transform: scale(1.3);
       }
     }
     .right {
-      width: 80px;
+      width: 1.3rem;
       height: 100%;
       float: right;
-      border-radius: 15px;
+      border-radius: 0.3rem;
       background: url(../../images/chat.png) no-repeat center center;
-      background-size: 60px;
+      background-size: 1.2rem;
       transform: scale(1.15);
 
       &:active {

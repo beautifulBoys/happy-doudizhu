@@ -31,19 +31,19 @@
 </script>
 <style lang="less" scoped>
   .clock-box {
-    width: 40px;
-    height: 40px;
+    width: 0.8rem;
+    height: 0.8rem;
     .clock {
       width: 100%;
       height: 100%;
       background: url(../../images/clock.png) no-repeat center center;
-      background-size: 40px;
-      line-height: 40px;
+      background-size: 0.8rem;
+      line-height: 0.8rem;
       font-weight: 700;
       color: #fff;
       text-align: center;
-      font-size: 18px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      font-size: 0.36rem;
+      text-shadow: 0.02rem 0.02rem 0.08rem rgba(0, 0, 0, 0.4);
     }
   }
 </style>

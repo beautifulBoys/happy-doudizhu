@@ -20,7 +20,7 @@ export default {
       mine: {
         user: {
           id: 21,
-          name: '深藏blue',
+          name: '深藏blue11111111111111',
           money: 20580
         },
         desk: {

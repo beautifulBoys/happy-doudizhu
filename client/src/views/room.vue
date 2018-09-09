@@ -4,12 +4,14 @@
       <img class="img" src="../images/bg.jpg"/>
     </div>
     <div class="desk">
+      <img class="desk-bg" src="../images/desk_bg.png" />
       <div class="body">
         <div class="header">
           <div class="left">
             <div class="back" @click="$router.go(-1)"></div>
             <div class="time">21:08</div>
           </div>
+          
           <div class="center">
             <template v-for="item in active">
               <li-card :item="item" :show="true" type="small"></li-card>
@@ -45,7 +47,7 @@
   import bottomCode from '../components/room/bottom.vue';
   import Card from '../components/card.vue';
   import Model from '../components/model.vue';
-  import io from '../lib/socket.io.js';
+  // import io from '../lib/socket.io.js';
   export default {
     components: {
       'room-first': firstCode,
@@ -74,7 +76,7 @@
       ...mapMutations([])
     },
     mounted () {
-      console.log(io);
+      // console.log(io);
       // this.$store.commit('create');
     },
     methods: {
@@ -99,6 +101,7 @@
       height: 100%;
       .img {
         width: 100%;
+        height: 100%;
       }
     }
     .desk {
@@ -109,30 +112,35 @@
       left: 0;
       display: flex;
       flex-flow: column;
-      background: url(../images/desk_bg.png) no-repeat center 200%;
-      background-size: 100%;
+      .desk-bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 70%;
+      }
       .body {
         flex: 1;
         display: flex;
         flex-flow: column;
         .header {
-          height: 40px;
+          height: 0.75rem;
           width: 100%;
           display: flex;
           .left {
             width: 27%;
-            padding: 0 20px;
+            padding: 0 0.4rem;
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
-            border-radius: 0 0 40px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            border-radius: 0 0 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 0.05rem 0.15rem rgba(0,0,0,0.3);
             display: flex;
             .back {
-              width: 40px;
-              height: 40px;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/back.png) no-repeat center center;
-              background-size: 33px;
+              background-size: 0.6rem;
               &:active {
                 transform: scale(0.9);
               }
@@ -142,45 +150,45 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: 18px;
+              font-size: 0.36rem;
               color: #eee;
             }
           }
           .right {
             width: 30%;
-            padding: 0 15px 0 30px;
+            padding: 0 0.2rem 0 0.6rem;
             box-sizing: border-box;
             background: rgba(0,0,0,0.2);
-            border-radius: 0 0 0 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            border-radius: 0 0 0 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 0 0.1rem rgba(0,0,0,0.3);
             display: flex;
             .tuoguan {
-              width: 40px;
-              height: 40px;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/tuoguan.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.6rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .huanzhuo {
-              width: 40px;
-              height: 40px;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/huanzhuo.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.6rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
             }
             .shezhi {
-              width: 40px;
-              height: 40px;
+              width: 0.75rem;
+              height: 0.75rem;
               background: url(../images/shezhi.png) no-repeat center center;
-              background-size: 35px;
-              margin: 0 6px;
+              background-size: 0.6rem;
+              margin: 0 0.15rem;
               &:active {
                 transform: scale(0.9);
               }
@@ -191,7 +199,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: -17px;
+            margin-top: -0.34rem;
           }
         }
         .top-box {
@@ -205,8 +213,9 @@
         }
       }
       .bottom-box {
-        height: 35px;
+        height: 0.7rem;
         font-size: 0;
+        z-index: 10;
       }
     }
   }

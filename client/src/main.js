@@ -4,6 +4,8 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './vuex/';
+import './lib/css/common.css'
+import './lib/js/rem.js'
 
 Vue.config.productionTip = false;
 
